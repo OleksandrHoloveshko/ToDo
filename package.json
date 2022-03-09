@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/OleksandrHoloveshko/ToDo/issues"
   },
-  "homepage": "https://github.com/OleksandrHoloveshko/ToDo#readme"
+  "homepage": "https://github.com/OleksandrHoloveshko/ToDo#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mongoose": "^6.2.4"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "nodemon": "^2.0.15"
+  }
 }
