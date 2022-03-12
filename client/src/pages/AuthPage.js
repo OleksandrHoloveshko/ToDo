@@ -1,12 +1,18 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {useHttp} from "../hook/http.hook";
+import {useMessage} from "../hook/message.hook";
 
 export const AuthPage = () => {
     const {loading, request, error, clearError} = useHttp()
+    const message = useMessage()
     const [form, setForm] = useState({
         email: '', password: ''
     })
 
+    useEffect(() => {
+        message(error)
+        clearError()
+    }, [error, message, clearError])
 
     const changeHandler = event => {
         setForm({...form, [event.target.name]: event.target.value})
@@ -15,8 +21,7 @@ export const AuthPage = () => {
     const registerHandler = async () => {
         try {
             const data = await request('/api/auth/register', 'POST', {...form})
-            // message(data.message)
-            console.log('Data', data)
+            message(data.message)
         } catch (e) {
         }
     }
