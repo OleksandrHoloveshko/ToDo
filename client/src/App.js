@@ -15,6 +15,7 @@ function App() {
     return (
         <AuthContext.Provider value={{token, login, logout, userId, isAuthenticated}}>
             <Router>
+                { isAuthenticated && <Navbar /> }
                 <Routes>
                     {routes}
                 </Routes>
