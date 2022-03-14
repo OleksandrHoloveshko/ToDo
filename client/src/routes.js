@@ -13,7 +13,7 @@ export const useRoutes = (isAuthenticated) => {
                 <Route path='/links' exact  element={<LinksPage/>}/>
                 <Route path='/create' exact  element={<CreatePage/>}/>
                 <Route path='/detail/:id' exact  element={<DetailPage/>}/>
-                {/*<Navigate to="/create" exact replace={true} />*/}
+                {/*<Navigate to="/create"/>*/}
             </>
         )
     }
