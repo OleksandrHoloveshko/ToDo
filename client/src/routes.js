@@ -1,5 +1,5 @@
 import React from "react"
-import {Route} from "react-router-dom"
+import {Navigate, Route} from "react-router-dom"
 import {LinksPage} from "./pages/LinksPage"
 import {CreatePage} from "./pages/CreatePage"
 import {DetailPage} from "./pages/DetailPage"
@@ -13,7 +13,7 @@ export const useRoutes = (isAuthenticated) => {
                 <Route path='/links' exact  element={<LinksPage/>}/>
                 <Route path='/create' exact  element={<CreatePage/>}/>
                 <Route path='/detail/:id' exact  element={<DetailPage/>}/>
-                {/*<Navigate to="/create"/>*/}
+                <Route path='/' element={<Navigate to='/create'/>}/>
             </>
         )
     }
@@ -21,7 +21,7 @@ export const useRoutes = (isAuthenticated) => {
     return (
         <>
             <Route path='/' exact element={<AuthPage/>}/>
-            {/*<Navigate  to='/' replace={true} />*/}
+            <Route path='/' element={<Navigate to='/'/>}/>
         </>
     )
 }
